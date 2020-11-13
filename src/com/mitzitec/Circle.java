@@ -1,17 +1,21 @@
 package com.mitzitec;
 
-public class Circle {
-    double radio, area, perimetro;
-    Shape c = new Shape();
+public class Circle implements Shape{
+    private double pi=3.141592;
+    private double radio;
 
-    void areaCircle(){
-        c.circleA = true;
-        c.getArea();
-    }
-    void perimeterCircle(){
-        c.circleP = true;
-        c.getPerimeter();
 
+    public Circle(double radio) {
+        this.radio = radio;
     }
 
+    @Override
+    public double getArea() {
+        return pi*radio*radio;
+    }
+
+    @Override
+    public double getPerimeter() {
+        return pi*radio*2;
+    }
 }

@@ -1,15 +1,19 @@
 package com.mitzitec;
 
-public class Square {
-    double lado, area, perimetro;
-    Shape s = new Shape();
+public class Square implements Shape{
+    double lado;
 
-    void areaSquare(){
-        s.squareA = true;
-        s.getArea();
+    public Square(double lado) {
+        this.lado = lado;
     }
-    void perimeterSquare(){
-        s.squareP = true;
-        s.getPerimeter();
+
+    @Override
+    public double getArea() {
+        return lado*lado;
+    }
+
+    @Override
+    public double getPerimeter() {
+        return lado*4;
     }
 }

@@ -1,18 +1,21 @@
 package com.mitzitec;
 
-public class Triangle {
-    double base, altura, lado, area, perimetro;
-    Shape t = new Shape();
+public class Triangle implements Shape{
+    private double base;
+    private double altura;
 
-    void areaTriangle(){
-        t.triangleA = true;
-        t.getArea();
-
-    }
-    void perimeterTriangle(){
-        t.triangleP = true;
-        t.getPerimeter();
-
+    public Triangle (double base, double altura) {
+        this.base = base;
+        this.altura = altura;
     }
 
+    @Override
+    public double getArea() {
+        return base*altura/2;
+    }
+
+    @Override
+    public double getPerimeter() {
+        return base*3;
+    }
 }

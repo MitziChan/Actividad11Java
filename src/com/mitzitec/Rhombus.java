@@ -1,15 +1,21 @@
 package com.mitzitec;
 
-public class Rhombus {
-    double diagonalMayor, diagonalMenor, lado, area, perimetro;
-    Shape s = new Shape();
+public class Rhombus implements Shape{
+    double diagMayor, diagMenor, lado, area;
 
-    void areaRhombus(){
-        s.rhombusA = true;
-        s.getArea();
+    public Rhombus(double diagMayor, double diagMenor, double lado) {
+        this.diagMayor = diagMayor;
+        this.diagMenor = diagMenor;
+        this.lado = lado;
     }
-    void perimeterRhombus(){
-        s.rhombusP = true;
-        s.getPerimeter();
+
+    @Override
+    public double getArea() {
+        return (diagMayor*diagMenor)/2;
+    }
+
+    @Override
+    public double getPerimeter() {
+        return lado*4;
     }
 }
